@@ -488,22 +488,11 @@ private static void registrarCita(
     sistema.agregarCita(cita);
 
     try {
-
-        GestorArchivos.guardarCitas(
-                sistema.getCitas()
-        );
-
+        GestorArchivos.guardarCitas(sistema.getCitas());
+        System.out.println("Cita registrada exitosamente.");
     } catch (IOException e) {
-
-        System.out.println(
-                "ERROR: No se pudo guardar la cita."
-        );
-
-        System.out.println(
-                "Detalle: " + e.getMessage()
-        );
-
-        return;
+        System.out.println("ERROR: No se pudo guardar la cita.");
+        System.out.println("Detalle: " + e.getMessage());
     }
 
     System.out.println();
