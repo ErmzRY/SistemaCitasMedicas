@@ -268,23 +268,13 @@ public class Principal {
         sistema.agregarDoctor(doctor);
 
         try {
-
-            GestorArchivos.guardarDoctores(
-                    sistema.getDoctores()
-            );
-
+            GestorArchivos.guardarDoctores(sistema.getDoctores());
+            System.out.println("Doctor registrado exitosamente.");
         } catch (IOException e) {
-
-            System.out.println(
-                    "ERROR: No se pudo guardar el doctor."
-            );
-
-            System.out.println(
-                    "Detalle: " + e.getMessage()
-            );
-
-            return;
+            System.out.println("ERROR: No se pudo guardar el doctor.");
+            System.out.println("Detalle: " + e.getMessage());
         }
+
     }
     private static void registrarPaciente(
             Scanner scanner,
