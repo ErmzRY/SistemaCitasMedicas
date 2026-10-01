@@ -331,22 +331,11 @@ public class Principal {
         sistema.agregarPaciente(paciente);
 
         try {
-
-            GestorArchivos.guardarPacientes(
-                    sistema.getPacientes()
-            );
-
+            GestorArchivos.guardarPacientes(sistema.getPacientes());
+            System.out.println("Paciente registrado exitosamente.");
         } catch (IOException e) {
-
-            System.out.println(
-                    "ERROR: No se pudo guardar el paciente."
-            );
-
-            System.out.println(
-                    "Detalle: " + e.getMessage()
-            );
-
-            return;
+            System.out.println("ERROR: No se pudo guardar el paciente.");
+            System.out.println("Detalle: " + e.getMessage());
         }
 
         System.out.println();
